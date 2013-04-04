@@ -8,7 +8,7 @@ Quick Start
 -----------
 **Step 1 - Add Typeface TextView as a library project**
 
-**Step 2 - Make the highlighted changes to your XML layout**
+**Step 2 - Make the following changes to your XML layout**
 ```xml
 <!-- 1. Add a custom namespace, xmlns:geekui -->
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
