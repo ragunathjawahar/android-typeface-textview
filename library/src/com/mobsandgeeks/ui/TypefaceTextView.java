@@ -1,3 +1,17 @@
+/*
+ * Copyright (C) 2013 Mobs and Geeks
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License"); you may not use this file 
+ * except in compliance with the License. You may obtain a copy of the License at
+ *
+ *      http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software distributed under the 
+ * License is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, 
+ * either express or implied. See the License for the specific language governing permissions and 
+ * limitations under the License.
+ */
+
 package com.mobsandgeeks.ui;
 
 import android.content.Context;
@@ -12,9 +26,18 @@ import com.mobsandgeeks.ui.R.styleable;
 import java.util.HashMap;
 import java.util.Map;
 
+/**
+ * Subclass of {@link TextView} that supports the <code>customTypeface</code> attribute from XML.
+ *
+ * @author Ragunath Jawahar <rj@mobsandgeeks.com>
+ */
 public class TypefaceTextView extends TextView {
 
-    protected static Map<String, Typeface> mTypefaces;
+    /*
+     * Caches typefaces based on their file path and name, so that they don't have to be created
+     * every time when they are referenced.
+     */
+    private static Map<String, Typeface> mTypefaces;
 
     public TypefaceTextView(final Context context) {
         this(context, null);
