@@ -6,7 +6,27 @@ creation boilerplate code.
 
 Quick Start
 -----------
-Yet to follow!
+**Step 1 - Add Typeface TextView as a library project**
+
+**Step 2 - Make the highlighted changes to your XML layout**
+```xml
+<!-- 1. Add a custom namespace, xmlns:geekui -->
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:geekui="http://schemas.android.com/apk/res-auto"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent">
+
+    <!-- 2. Replace <TextView> tags with <com.mobsandgeeks.ui.TypefaceTextView> tags -->
+    <!-- 3. Specify the path to your custom font in the 'assets' folder
+            using the 'geekui:customTypeface' attribute -->
+    <com.mobsandgeeks.ui.TypefaceTextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/hello_world"
+        geekui:customTypeface="fonts/custom_font.ttf" />
+
+</RelativeLayout>
+```
 
 License
 -------
