@@ -53,26 +53,28 @@ public class TypefaceTextView extends TextView {
             mTypefaces = new HashMap<String, Typeface>();
         }
 
-        final TypedArray array = context.obtainStyledAttributes(attrs, styleable.TypefaceTextView);
-        if (array != null) {
-            final String typefaceAssetPath = array.getString(
-                    R.styleable.TypefaceTextView_customTypeface);
+		if (isInEditMode()) {
+			final TypedArray array = context.obtainStyledAttributes(attrs, styleable.TypefaceTextView);
+			if (array != null) {
+				final String typefaceAssetPath = array.getString(
+						R.styleable.TypefaceTextView_customTypeface);
 
-            if (typefaceAssetPath != null) {
-                Typeface typeface = null;
+				if (typefaceAssetPath != null) {
+					Typeface typeface = null;
 
-                if (mTypefaces.containsKey(typefaceAssetPath)) {
-                    typeface = mTypefaces.get(typefaceAssetPath);
-                } else {
-                    AssetManager assets = context.getAssets();
-                    typeface = Typeface.createFromAsset(assets, typefaceAssetPath);
-                    mTypefaces.put(typefaceAssetPath, typeface);
-                }
+					if (mTypefaces.containsKey(typefaceAssetPath)) {
+						typeface = mTypefaces.get(typefaceAssetPath);
+					} else {
+						AssetManager assets = context.getAssets();
+						typeface = Typeface.createFromAsset(assets, typefaceAssetPath);
+						mTypefaces.put(typefaceAssetPath, typeface);
+					}
 
-                setTypeface(typeface);
-            }
-            array.recycle();
-        }
+					setTypeface(typeface);
+				}
+				array.recycle();
+			}
+		}
     }
 
 }
