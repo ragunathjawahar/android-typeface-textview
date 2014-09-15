@@ -16,5 +16,9 @@
     <declare-styleable name="TypefaceTextView">
         <attr name="customTypeface" format="string" />
     </declare-styleable>
+    
+    <declare-styleable name="CustomTheme">
+        <attr name="typefaceTextViewStyle" format="reference" />
+    </declare-styleable>
 
 </resources>
