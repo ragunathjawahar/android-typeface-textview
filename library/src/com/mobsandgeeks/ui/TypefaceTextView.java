@@ -44,7 +44,7 @@ public class TypefaceTextView extends TextView {
     }
 
     public TypefaceTextView(final Context context, final AttributeSet attrs) {
-        this(context, attrs, 0);
+        this(context, attrs, R.attr.typefaceTextViewStyle);
     }
 
     public TypefaceTextView(final Context context, final AttributeSet attrs, final int defStyle) {
@@ -53,7 +53,7 @@ public class TypefaceTextView extends TextView {
             mTypefaces = new HashMap<String, Typeface>();
         }
 
-        final TypedArray array = context.obtainStyledAttributes(attrs, styleable.TypefaceTextView);
+        final TypedArray array = context.obtainStyledAttributes(attrs, styleable.TypefaceTextView, defStyle, 0);
         if (array != null) {
             final String typefaceAssetPath = array.getString(
                     R.styleable.TypefaceTextView_customTypeface);
