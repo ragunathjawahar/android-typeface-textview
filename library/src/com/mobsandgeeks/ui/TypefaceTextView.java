@@ -68,8 +68,13 @@ public class TypefaceTextView extends TextView {
                     typeface = Typeface.createFromAsset(assets, typefaceAssetPath);
                     mTypefaces.put(typefaceAssetPath, typeface);
                 }
-
-                setTypeface(typeface);
+                
+                Typeface current = getTypeface();
+				if (current != null)
+					setTypeface(typeface, current.getStyle());
+				else
+					setTypeface(typeface);
+					
             }
             array.recycle();
         }
