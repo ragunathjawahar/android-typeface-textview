@@ -53,6 +53,10 @@ public class TypefaceTextView extends TextView {
             mTypefaces = new HashMap<String, Typeface>();
         }
 
+        // prevent exception in Android Studio / ADT interface builder
+        if (this.isInEditMode())
+            return;
+
         final TypedArray array = context.obtainStyledAttributes(attrs, styleable.TypefaceTextView);
         if (array != null) {
             final String typefaceAssetPath = array.getString(
