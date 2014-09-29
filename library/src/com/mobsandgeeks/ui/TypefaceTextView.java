@@ -54,8 +54,9 @@ public class TypefaceTextView extends TextView {
         }
 
         // prevent exception in Android Studio / ADT interface builder
-        if (this.isInEditMode())
+        if (this.isInEditMode()) {
             return;
+        }
 
         final TypedArray array = context.obtainStyledAttributes(attrs, styleable.TypefaceTextView);
         if (array != null) {
