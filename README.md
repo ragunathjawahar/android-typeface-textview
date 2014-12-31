@@ -4,6 +4,10 @@ Typeface TextView
 Typeface TextView allows you to specify custom fonts right in the XML and avoids typeface 
 creation boilerplate code.
 
+NOTICE
+------
+This library is **deprecated and no longer maintained**. Please make use of the wonderful [Calligraphy][1] library for all your custom typeface needs.
+
 Quick Start
 -----------
 **Step 1 - Add Typeface TextView as a library project**
@@ -44,3 +48,6 @@ License
     WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
     See the License for the specific language governing permissions and
     limitations under the License.
+
+
+  [1]: https://github.com/chrisjenx/Calligraphy
